@@ -1,0 +1,78 @@
+<form>
+  <div>
+    <label for="name">Nombre</label>
+    <input id="name" type="text" placeholder="Ingrese su Nombre" />
+  </div>
+  <div>
+    <label for="apellido">Apellido</label>
+    <input id="apellido" type="text" placeholder="Ingrese su Apellido" />
+  </div>
+  <div>
+    <label for="numero">Numero de tel</label>
+    <input id="numero" type="text" placeholder="Ingrese su Numero de telefono"
+    />
+  </div>
+  <div>
+    <label for="fecha">Fecha</label>
+    <input type="date" />
+  </div>
+  <div>
+    <label for="especialista">Especialista</label>
+    <select name="" id="especialista">
+      <optgroup>
+        <option value="">Seleccione</option>
+        <option value="">Medico General</option>
+        <option value="">Cirujano</option>
+        <option value="">Neurologo</option>
+        <option value="">Cadiologo</option>
+      </optgroup>
+    </select>
+  </div>
+  <input class="btn" type="submit" value="Reservar la cita" />
+</form>
+
+<style lang="scss">
+  :root {
+    --color-secction-bg: #f4f7fd;
+    --color-text-white: #fff;
+    --color-secction-text: #333;
+    --color-blue: #1d4ed8;
+    --color-blue-claro: #a8bfff;
+  }
+  form {
+    width: 95%;
+    background-color: var(--color-text-white);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      label {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--color-secction-text);
+      }
+      input,
+      select {
+        border-radius: 5px;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+        color: var(--color-secction-text);
+      }
+    }
+
+    .btn {
+      background-color: var(--color-blue);
+      color: var(--color-text-white);
+      padding: 1rem;
+      border-radius: 15px;
+      width: 100%;
+    }
+  }
+</style>
