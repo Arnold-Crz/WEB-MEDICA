@@ -1,0 +1,159 @@
+---
+import BannerPerfil from './ui-components/BannerPerfil.astro';
+---
+
+<section class="home-container">
+  <div class="home-content">
+    <h1>
+      Tu Salud y <span class="">Bienestar</span><br /> es nuestra prioridad
+    </h1>
+    <p>
+      Puedes reservar una cita en línea o llamar al <strong
+        >01 800-123-4567
+      </strong>
+    </p>
+    <a class="btn-cita" href="#contact">Agenda Cita</a>
+  </div>
+  <div class="home-bg">
+    <div class="bg-img1">
+      <img src="pill_3d.png" alt="pildora" />
+    </div>
+    <div class="bg-img2">
+      <img src="stethoscope_3d.png" alt="stethoscope" />
+    </div>
+    <div class="bg-img3">
+      <img src="syringe_3d.png" alt="syringe" />
+    </div>
+    <div class="bg-portada">
+      <img src="portada-home.png" alt="portada" />
+    </div>
+  </div>
+  <BannerPerfil />
+</section>
+
+<style lang="scss">
+  :root {
+    --color-secction-bg: #f4f7fd;
+    --color-secction-text: #333;
+    --color-blue: #1d4ed8;
+    --color-blue-claro: #a8bfff;
+  }
+
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 70px;
+
+    background: var(--color-secction-bg);
+    width: 100%;
+    min-height: calc(100vh - 500px);
+
+    .home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      height: max-content;
+      padding: 0 20px;
+
+      h1 {
+        margin-top: 10px;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--color-secction-text);
+        span {
+          color: var(--color-blue);
+        }
+      }
+      p {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--color-secction-text);
+      }
+
+      .btn-cita {
+        position: relative;
+        font-size: 17px;
+        text-transform: uppercase;
+        padding: 1em 2.5em;
+        display: inline-block;
+        border-radius: 100px;
+        font-weight: 600;
+        color: var(--color-secction-bg);
+        background-color: var(--color-blue);
+        cursor: pointer;
+        z-index: 1;
+
+        &::after {
+          content: '';
+          display: inline-block;
+          height: 100%;
+          width: 100%;
+          border-radius: 100px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: var(--color-blue);
+          transition: all 0.4s;
+          animation: btn-cita 1s ease-in-out infinite;
+          z-index: -1;
+        }
+
+        @keyframes btn-cita {
+          0% {
+            transform: scaleX(1) scaleY(1);
+            opacity: 0.5;
+          }
+          100% {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+          }
+        }
+      }
+    }
+
+    .home-bg {
+      position: relative;
+
+      height: 350px;
+
+      .bg-portada {
+        position: absolute;
+        top: 0;
+        left: 20px;
+      }
+      .bg-img1,
+      .bg-img2,
+      .bg-img3 {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        padding: 10px;
+        z-index: 1;
+      }
+      .bg-img1 {
+        top: 20px;
+        left: 80px;
+        background-color: #d62353;
+        transform: rotate(25deg);
+        filter: drop-shadow(0px 0px 20px #d62353);
+      }
+      .bg-img2 {
+        top: 30px;
+        right: 15px;
+        background-color: #fcd45d;
+        transform: rotate(-25deg);
+        filter: drop-shadow(0px 0px 20px #fcd45d);
+      }
+      .bg-img3 {
+        left: 50px;
+        bottom: 90px;
+        background-color: #57328c;
+        filter: drop-shadow(0px 0px 20px #57328c);
+      }
+    }
+  }
+</style>
