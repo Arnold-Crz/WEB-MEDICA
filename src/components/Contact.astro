@@ -2,9 +2,9 @@
 import Form from './ui-components/Form.astro';
 ---
 
-<section>
-  <article>
-    <div class="contact-icon">
+<section id="contact" class="contact">
+  <article class="contact_content">
+    <div class="contact_content_icon">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="80"
@@ -18,84 +18,25 @@ import Form from './ui-components/Form.astro';
         ></path>
       </svg>
     </div>
-    <h3>Cita</h3>
-    <h2>Reserve su Cita</h2>
-    <p>
+    <h3 class="contact_content_title">Cita</h3>
+    <h2 class="contact_content_subtitle">Reserve su Cita</h2>
+    <p class="contact_content_description">
       Creemos en brindar la mejor atencion a nuestros pasientes cuidar de su
       salud
     </p>
-    <a href="#" target="_blank" rel="noopener noreferrer"> Contactar</a>
+    <a
+      class="contact_content_contact"
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Contactar via Whatsapp
+    </a>
   </article>
-  <div class="contact-form">
-    <h2>
-      Llene el siguiente formulario para reservar una cita en nuestra clinica
-      👨‍⚕️👩‍⚕️
+  <div class="contact_form">
+    <h2 class="contact_form_title">
+      Reserve una cita llenando el formulario! 👨‍⚕️👩‍⚕️
     </h2>
     <Form />
   </div>
 </section>
-
-<style lang="scss">
-  :root {
-    --color-secction-bg: #f4f7fd;
-    --color-text-white: #fff;
-    --color-secction-text: #333;
-    --color-blue: #1d4ed8;
-    --color-blue-claro: #a8bfff;
-  }
-  section {
-    margin-top: 30px;
-    padding: 0 1.2rem;
-    width: 100%;
-    background-color: var(--color-secction-bg);
-    article {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.2rem;
-
-      .contact-icon {
-        margin-bottom: 1.2rem;
-      }
-      h2 {
-        font-size: 2rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        color: var(--color-secction-text);
-      }
-      h3 {
-        font-size: 1.5rem;
-        font-weight: 400;
-        color: var(--color-secction-text);
-      }
-      p {
-        font-size: 1.1rem;
-        font-weight: 200;
-        margin-bottom: 1rem;
-        color: var(--color-secction-text);
-      }
-      a {
-        margin-top: 10px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #1d4ed8;
-        padding: 1rem;
-        color: var(--color-text-white);
-        border-radius: 15px;
-        filter: drop-shadow(0px 0px 10px #1d4ed8);
-      }
-    }
-    .contact-form {
-      margin-top: 50px;
-      h2 {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-        color: var(--color-secction-text);
-      }
-    }
-  }
-</style>

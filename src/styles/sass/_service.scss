@@ -1,0 +1,57 @@
+@use 'variables' as v;
+
+.services {
+  position: relative;
+  margin-top: 30px;
+  padding: 0 1.2rem;
+  overflow: hidden;
+
+  .service-effect {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    z-index: -1;
+
+    @media screen and (min-width: 768px) {
+      .heart {
+        width: 713px;
+        height: 630px;
+        transform: translateY(-115px);
+      }
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    svg {
+      align-self: center;
+    }
+
+    h2 {
+      color: v.$colorText;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: 768px) {
+        font-size: 2.8rem;
+
+      }
+
+      font-weight: 800;
+      margin-top: 20px;
+
+      span {
+        color: v.$colorBluee;
+        font-weight: 800;
+      }
+    }
+  }
+
+  .services-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+  }
+}

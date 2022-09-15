@@ -2,12 +2,12 @@
 import CardAbout from './ui-components/CardAbout.astro';
 ---
 
-<section>
-  <h2>Por que deberia <span> Preferirnos?</span></h2>
-  <p>Los mejores servicios para ti</p>
+<section id="about" class="about">
+  <h2 class="about_title">Por que deberia <span> Preferirnos?</span></h2>
+  <p class="about_description">Los mejores servicios para ti</p>
   <div class="about-container">
     <div class="about-img">
-      <img src="about.png" alt="img de about" />
+      <img src="service.png" alt="img de about" />
     </div>
     <div class="about-circle">
       <svg
@@ -93,40 +93,3 @@ import CardAbout from './ui-components/CardAbout.astro';
     </div>
   </div>
 </section>
-
-<style lang="scss">
-  :root {
-    --color-secction-bg: #f4f7fd;
-    --color-text-white: #fff;
-    --color-secction-text: #333;
-    --color-blue: #1d4ed8;
-    --color-blue-claro: #a8bfff;
-  }
-
-  section {
-    margin-top: 30px;
-    padding: 0 1.2rem;
-    position: relative;
-    h2 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--color-secction-text);
-      span {
-        color: var(--color-blue);
-      }
-    }
-    p {
-      font-size: 1.2rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      color: var(--color-secction-text);
-    }
-
-    .about-circle {
-      position: absolute;
-      top: 230px;
-      left: -120px;
-      z-index: -1;
-    }
-  }
-</style>

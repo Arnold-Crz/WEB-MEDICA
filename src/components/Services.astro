@@ -2,7 +2,7 @@
 import CardServices from './ui-components/CardServices.astro';
 ---
 
-<section class="w-full min-h-screen">
+<section id="services" class="services w-full min-h-screen">
   <div class="service-effect">
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,6 +10,7 @@ import CardServices from './ui-components/CardServices.astro';
       height="482"
       fill="none"
       viewBox="0 0 979 882"
+      class="heart"
     >
       <path
         fill="#6CAAF2"
@@ -49,7 +50,7 @@ import CardServices from './ui-components/CardServices.astro';
         d="m23.8 63.4-4.247-4.247a2.401 2.401 0 0 1-.703-1.698v0c0-.906.515-1.733 1.327-2.143l2.192-1.094a9.9 9.9 0 0 1 11.425 1.851l4.43 4.43a9.9 9.9 0 0 1 2.901 7V83.2L23.8 63.4Zm37.952-19.8H45.248V32.052H33.7V15.548h11.548V4h16.504v11.548H73.3v16.504H61.752V43.6Z"
       ></path>
     </svg>
-    <h2>Contamos con la mejor Atencion y <span>Servicios</span></h2>
+    <h2>La Mejor Atencion y <span>Servicios</span></h2>
   </div>
   <div class="services-cards-container">
     <CardServices
@@ -130,51 +131,3 @@ import CardServices from './ui-components/CardServices.astro';
     </CardServices>
   </div>
 </section>
-
-<style lang="scss">
-  :root {
-    --color-secction-bg: #f4f7fd;
-    --color-text-white: #fff;
-    --color-secction-text: #333;
-    --color-blue: #1d4ed8;
-    --color-blue-claro: #a8bfff;
-  }
-  section {
-    position: relative;
-    margin-top: 30px;
-    padding: 0 1.2rem;
-    overflow: hidden;
-
-    .service-effect {
-      position: absolute;
-      top: 120px;
-      left: 0;
-      z-index: -1;
-    }
-    div {
-      display: flex;
-      flex-direction: column;
-      svg {
-        align-self: center;
-      }
-      h2 {
-        color: var(--color-secction-text);
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-
-        font-weight: 800;
-        margin-top: 20px;
-        span {
-          color: var(--color-blue);
-          font-weight: 800;
-        }
-      }
-    }
-
-    .services-cards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      grid-gap: 2rem;
-    }
-  }
-</style>

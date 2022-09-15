@@ -1,19 +1,64 @@
+---
+import '../styles/sass/index.scss';
+---
+
 <header>
   <nav class="bg-white flex justify-between items-center p-5 h-20">
     <img class="w-12" src="logo.svg" alt="logo" />
     <ul
-      class="nav absolute flex flex-col justify-center items-center gap-10 w-full h-screen [&>li>a]:text-white [&>li>a]:text-4xl [&>li>a]:font-bold uppercase overflow-hidden"
+      class="movile nav absolute flex flex-col justify-center items-center gap-10 w-full h-screen [&>li>a]:text-white [&>li>a]:text-4xl [&>li>a]:font-bold uppercase overflow-hidden"
     >
-      <li><a class="efect" data-title="Inicio" href="#home">Inicio</a></li>
+      <li>
+        <a class="efect" data-title="Inicio" href="#home">Inicio</a>
+      </li>
+
       <li>
         <a class="efect" data-title="Servicios" href="#services">Servicios</a>
       </li>
-      <li><a class="efect" data-title="Nosotros" href="#about">Nosotros</a></li>
+
+      <li>
+        <a class="efect" data-title="Nosotros" href="#about">Nosotros</a>
+      </li>
+
       <li>
         <a class="efect" data-title="Contacto" href="#contact">Contacto</a>
       </li>
+
       <li>
         <a class="efect" data-title="Cita" href="#contact">Cita</a>
+      </li>
+    </ul>
+    <ul
+      class="desktop flex gap-4 [&>li>a]:text-lg [&>li>a]:uppercase [&>li>a]:font-bold"
+    >
+      <li>
+        <a class="text-slate-800 hover:border-b-2 border-blue-600" href="#home"
+          >Inicio
+        </a>
+      </li>
+      <li>
+        <a
+          class="text-slate-800 hover:border-b-2 border-blue-600"
+          href="#services"
+          >Servicios
+        </a>
+      </li>
+      <li>
+        <a class="text-slate-800 hover:border-b-2 border-blue-600" href="#about"
+          >Nosotros
+        </a>
+      </li>
+      <li>
+        <a
+          class="text-slate-800 hover:border-b-2 border-blue-600"
+          href="#contact"
+          >Contacto
+        </a>
+      </li>
+      <li>
+        <a class="bg-blue-600 text-white p-2 rounded-md" href="#contact"
+          >Cita
+        </a>
       </li>
     </ul>
     <div class="hamburger hamburger--spring">
@@ -24,164 +69,21 @@
   </nav>
 </header>
 
-<style lang="scss">
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-
-    nav {
-      width: 100%;
-      position: relative;
-      background-color: #ffffff;
-      ul {
-        left: 0;
-        top: 0;
-        clip-path: circle(0.3% at 100% 0);
-        background-color: #4d88e5;
-        transition: 0.5s ease-in-out;
-
-        &.is-active {
-          clip-path: circle(141.7% at 100% 0);
-        }
-        .efect {
-          position: relative;
-
-          &::after {
-            content: attr(data-title);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: rgb(235, 235, 235);
-            font-size: 4rem;
-            font-weight: 700;
-            line-height: 2rem;
-            z-index: 1;
-            opacity: 0;
-            pointer-events: none;
-            letter-spacing: 1rem;
-          }
-          &:hover::after {
-            opacity: 0.1;
-            letter-spacing: 0;
-            transition: letter-spacing 0.5s ease-in-out;
-          }
-        }
-      }
-    }
-  }
-
-  /* Bootom Hamburger */
-  .hamburger {
-    display: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    .hamburger {
-      padding: 15px 15px;
-      display: inline-block;
-      cursor: pointer;
-      transition-property: opacity, filter;
-      transition-duration: 0.15s;
-      transition-timing-function: linear;
-      font: inherit;
-      color: inherit;
-      text-transform: none;
-      background-color: transparent;
-      border: 0;
-      margin: 0;
-      overflow: visible;
-    }
-    .hamburger:hover {
-      opacity: 0.7;
-    }
-    .hamburger.is-active:hover {
-      opacity: 0.7;
-    }
-    .hamburger.is-active .hamburger-inner,
-    .hamburger.is-active .hamburger-inner::before,
-    .hamburger.is-active .hamburger-inner::after {
-      background-color: #ffffff;
-    }
-
-    .hamburger-box {
-      width: 40px;
-      height: 24px;
-      display: inline-block;
-      position: relative;
-    }
-
-    .hamburger-inner {
-      display: block;
-      top: 50%;
-      margin-top: -2px;
-    }
-    .hamburger-inner,
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      width: 40px;
-      height: 4px;
-      background-color: #1d4ed8;
-      border-radius: 4px;
-      position: absolute;
-      transition-property: transform;
-      transition-duration: 0.15s;
-      transition-timing-function: ease;
-    }
-    .hamburger-inner::before,
-    .hamburger-inner::after {
-      content: '';
-      display: block;
-    }
-    .hamburger-inner::before {
-      top: -10px;
-    }
-    .hamburger-inner::after {
-      bottom: -10px;
-    }
-
-    .hamburger--spring .hamburger-inner {
-      top: 2px;
-      transition: background-color 0s 0.13s linear;
-    }
-    .hamburger--spring .hamburger-inner::before {
-      top: 10px;
-      transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-        transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-    .hamburger--spring .hamburger-inner::after {
-      top: 20px;
-      transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1),
-        transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
-    }
-
-    .hamburger--spring.is-active .hamburger-inner {
-      transition-delay: 0.22s;
-      background-color: transparent !important;
-    }
-    .hamburger--spring.is-active .hamburger-inner::before {
-      top: 0;
-      transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 10px, 0) rotate(45deg);
-    }
-    .hamburger--spring.is-active .hamburger-inner::after {
-      top: 0;
-      transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333),
-        transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
-      transform: translate3d(0, 10px, 0) rotate(-45deg);
-    }
-  }
-</style>
-
 <script type="module">
   const $ = (etiqueta) => document.querySelector(etiqueta);
 
   const nav = $('.nav');
   const hamburger = $('.hamburger');
+
+  const link = nav.querySelectorAll('a');
+  link.forEach((element) =>
+    element.addEventListener('click', () => {
+      if (hamburger.classList.contains('is-active')) {
+        nav.classList.remove('is-active');
+        hamburger.classList.remove('is-active');
+      }
+    })
+  );
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('is-active');

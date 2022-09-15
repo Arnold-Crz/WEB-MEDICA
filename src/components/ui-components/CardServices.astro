@@ -19,18 +19,12 @@ const { title, subTitle, description } = Astro.props as Props;
 </article>
 
 <style lang="scss">
-  :root {
-    --color-secction-bg: #f4f7fd;
-    --color-text-white: #fff;
-    --color-secction-text: #333;
-    --color-blue: #1d4ed8;
-    --color-blue-claro: #a8bfff;
-  }
+  @use '../../styles/sass/variables' as v;
   article {
     width: 90%;
     margin: 0 auto;
     border-radius: 15px;
-    background-color: var(--color-blue);
+    background-color: v.$colorBluee;
     padding: 1rem;
 
     figure {
@@ -42,7 +36,7 @@ const { title, subTitle, description } = Astro.props as Props;
 
         figcaption {
           margin-top: 10px;
-          color: var(--color-text-white);
+          color: v.$colorWhite;
           font-size: 1.5rem;
           font-weight: 600;
           span {
@@ -54,7 +48,7 @@ const { title, subTitle, description } = Astro.props as Props;
 
       .description {
         margin-top: 10px;
-        color: var(--color-text-white);
+        color: v.$colorWhite;
         font-size: 1rem;
         line-height: 1.4rem;
         font-weight: 200;

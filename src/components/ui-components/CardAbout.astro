@@ -7,62 +7,55 @@ export interface Props {
 const { title, description } = Astro.props as Props;
 ---
 
-<div>
-  <div class="card-logo">
+<div class="card">
+  <div class="card_logo">
     <slot />
   </div>
-  <div class="card-content">
-    <h2>{title}</h2>
-    <p>{description}</p>
+  <div class="card_content">
+    <h2 class="card_content_title">{title}</h2>
+    <p class="card_content_description">{description}</p>
   </div>
 </div>
 
 <style lang="scss">
-  :root {
-    --color-secction-bg: #f4f7fd;
-    --color-text-white: #fff;
-    --color-secction-text: #333;
-    --color-blue: #1d4ed8;
-    --color-blue-claro: #a8bfff;
-  }
-  div {
+  @use '../../styles/sass/variables' as v;
+  .card {
     display: flex;
     gap: 1.5rem;
     align-items: center;
-    background-color: var(--color-text-white);
+    background-color: v.$colorWhite;
     width: 100%;
     margin: 0 auto;
     border-radius: 15px;
-    margin-top: 20px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    padding: 0.5rem 0.8rem;
+    padding: 1.5rem 0.8rem;
 
-    .card-logo {
+    &_logo {
       width: 50px;
       height: 50px;
       border-radius: 10px;
-      background-color: var(--color-blue);
+      background-color: v.$colorBluee;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1rem;
-      filter: drop-shadow(0px 0px 4px var(--color-blue));
+      filter: drop-shadow(0px 0px 4px v.$colorBluee);
     }
 
-    .card-content {
+    &_content {
       display: flex;
       flex-direction: column;
       box-shadow: none;
       gap: 0;
 
-      h2 {
-        color: var(--color-blue);
+      &_title {
+        color: v.$colorBluee;
         font-size: 1.2rem;
         font-weight: 600;
         align-self: flex-start;
       }
-      p {
-        color: var(--color-secction-text);
+      &_description {
+        color: v.$colorText;
         font-size: 0.9rem;
         font-weight: 400;
       }

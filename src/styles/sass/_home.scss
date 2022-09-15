@@ -1,0 +1,160 @@
+@use 'variables' as v;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 70px;
+
+  background: v.$colorWhite;
+  width: 100%;
+  min-height: 100vh;
+
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    min-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    place-items: center;
+
+
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: max-content;
+    padding: 0 20px;
+
+    h1 {
+      margin-top: 10px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: v.$colorText;
+
+      @media screen and (min-width: 768px) {
+        font-size: 3rem;
+
+      }
+
+      span {
+        color: v.$colorBluee;
+      }
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: v.$colorText;
+    }
+
+    .btn-cita {
+      position: relative;
+      font-size: 17px;
+      text-transform: uppercase;
+      padding: 1em 2.5em;
+      display: inline-block;
+      border-radius: 100px;
+      font-weight: 600;
+      color: v.$colorWhite;
+      background-color: v.$colorBluee;
+      cursor: pointer;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: v.$colorBluee;
+        transition: all 0.4s;
+        animation: btn-cita 1s ease-in-out infinite;
+        z-index: -1;
+      }
+
+      @keyframes btn-cita {
+        0% {
+          transform: scaleX(1) scaleY(1);
+          opacity: 0.5;
+        }
+
+        100% {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .home_bg {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-image: url('portada-home.png');
+    background-position-x: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media screen and (min-width: 768px) {
+      height: 500px;
+      background-position-x: 160px;
+    }
+
+
+    .bg-img1,
+    .bg-img2,
+    .bg-img3 {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .bg-img1 {
+      width: 50px;
+      height: 50px;
+      top: 20px;
+      left: 80px;
+      background-color: #d62353;
+      transform: rotate(25deg);
+      filter: drop-shadow(0px 0px 20px #d62353);
+    }
+
+    .bg-img2 {
+      top: 0px;
+      right: 15px;
+      background-color: #fcd45d;
+      transform: rotate(-25deg);
+      filter: drop-shadow(0px 0px 20px #fcd45d);
+
+      @media screen and (min-width: 728px) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    .bg-img3 {
+      left: 100px;
+      bottom: 80px;
+      background-color: #57328c;
+      filter: drop-shadow(0px 0px 20px #57328c);
+
+      @media screen and (min-width: 728px) {
+        left: 180px;
+        bottom: 130px;
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
